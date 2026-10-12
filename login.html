@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c35">
+  <title>System Access | Punjab NastonAL College</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page" data-page="login">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="College results home">
+      <img class="brand-mark" src="assets/college-logo.png" alt="">
+      <span class="brand-copy">
+        <strong>Punjab NastonAL College</strong>
+        <span>Peshawar Chapter · Student Results</span>
+      </span>
+    </a>
+    <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to results</a>
+  </header>
+  <main class="login-main">
+    <section class="login-card card">
+      <img class="login-emblem" src="assets/college-logo.png" alt="">
+      <span class="eyebrow">SECURE AREA</span>
+      <h1>Welcome back</h1>
+      <p class="login-intro">Sign in to manage student result records.</p>
+      <form id="login-form" class="login-form">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" placeholder="Enter your username" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+        <p class="form-message" id="login-message" role="alert" aria-live="polite"></p>
+        <button class="button button-primary button-wide" type="submit">Sign in <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="login-footnote"><span aria-hidden="true">⌑</span> Authorized college administrators only</div>
+    </section>
+    <div class="login-aside">
+      <span class="eyebrow">PESHAWAR CHAPTER</span>
+      <p>Thoughtful learning.<br><strong>Brighter futures.</strong></p>
+      <span class="aside-line"></span>
+      <span class="aside-caption">STUDENT RESULT MANAGEMENT</span>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span>© <span data-current-year></span> Punjab NastonAL College · Peshawar Chapter</span>
+    <a href="index.html">Public result search</a>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

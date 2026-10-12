@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c35">
+  <title>Student Results | Punjab NastonAL College</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="results">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="College results home">
+      <img class="brand-mark" src="assets/college-logo.png" alt="">
+      <span class="brand-copy">
+        <strong>Punjab NastonAL College</strong>
+        <span>Peshawar Chapter · Student Results</span>
+      </span>
+    </a>
+    <div class="menu-wrap">
+      <button class="icon-button menu-trigger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="access-menu">⋮</button>
+      <nav class="access-menu" id="access-menu" hidden>
+        <a href="login.html">Data Entry (Admin)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="public-main">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> OFFICIAL RESULT PORTAL</span>
+        <h1>Your academic progress,<br><span>all in one place.</span></h1>
+        <p>Enter your roll number to view and print your official student marksheet.</p>
+        <form id="result-search" class="search-form">
+          <label for="search-roll">Student roll number</label>
+          <div class="search-control">
+            <span class="search-symbol" aria-hidden="true">⌕</span>
+            <input id="search-roll" name="rollNumber" type="search" placeholder="e.g. PNC-2026-001" autocomplete="off" required>
+            <button class="button button-primary" type="submit">Search result <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-message" id="search-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-card">
+          <span class="art-card-label">ACADEMIC SESSION</span>
+          <strong>2025—26</strong>
+          <span class="art-card-rule"></span>
+          <span class="art-card-note">Learn · Grow · Achieve</span>
+          <span class="art-seal">PN</span>
+        </div>
+        <span class="art-spark spark-one">✦</span>
+        <span class="art-spark spark-two">✳</span>
+      </div>
+    </section>
+
+    <section class="result-section" id="result-section" aria-live="polite">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon" aria-hidden="true">▤</div>
+        <h2>Ready when you are</h2>
+        <p>Your marksheet will appear here after you search by roll number.</p>
+      </div>
+      <article class="marksheet card" id="marksheet" hidden></article>
+    </section>
+    <p class="portal-note"><span aria-hidden="true">⌑</span> Please check that your roll number is entered correctly. Results are case-insensitive.</p>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span data-current-year></span> Punjab NastonAL College · Peshawar Chapter</span>
+    <span>Student Result Portal</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

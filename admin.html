@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c35">
+  <title>Data Entry Panel | Punjab NastonAL College</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page" data-page="admin">
+  <header class="site-header admin-header">
+    <a class="brand" href="admin.html" aria-label="Admin panel home">
+      <img class="brand-mark" src="assets/college-logo.png" alt="">
+      <span class="brand-copy">
+        <strong>Punjab NastonAL College</strong>
+        <span>Peshawar Chapter · Administration</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a class="back-link" href="index.html">View public portal <span aria-hidden="true">↗</span></a>
+      <button class="button button-quiet" id="logout-button" type="button">Sign out</button>
+    </div>
+  </header>
+  <main class="admin-main">
+    <div class="admin-heading">
+      <div>
+        <span class="eyebrow"><span class="eyebrow-dot"></span> ADMINISTRATION</span>
+        <h1>Result management</h1>
+        <p>Create, update, and find student marksheets.</p>
+      </div>
+      <div class="record-count"><span class="count-icon" aria-hidden="true">▤</span><span><strong id="record-count">0</strong><small>Saved results</small></span></div>
+    </div>
+
+    <div class="admin-layout">
+      <section class="editor-column">
+        <form id="result-form" class="editor-card card">
+          <div class="section-heading">
+            <div><span class="section-kicker">STUDENT RECORD</span><h2 id="form-title">Enter student result</h2></div>
+            <span class="required-note"><span>*</span> Required</span>
+          </div>
+          <input id="record-id" name="recordId" type="hidden">
+          <div class="form-grid">
+            <div class="field"><label for="student-name">Name <span>*</span></label><input id="student-name" name="name" type="text" required maxlength="120" placeholder="Student full name"></div>
+            <div class="field"><label for="father-name">Father Name <span>*</span></label><input id="father-name" name="fatherName" type="text" required maxlength="120" placeholder="Father's full name"></div>
+            <div class="field"><label for="roll-number">Roll Number <span>*</span></label><input id="roll-number" name="rollNumber" type="text" required maxlength="40" placeholder="e.g. PNC-2026-001"></div>
+            <div class="field"><label for="student-class">Class <span>*</span></label><input id="student-class" name="className" type="text" required maxlength="60" placeholder="e.g. Intermediate Part I"></div>
+            <div class="field"><label for="student-section">Section</label><input id="student-section" name="section" type="text" maxlength="40" placeholder="e.g. Section A"></div>
+            <div class="field"><label for="exam-date">Date</label><input id="exam-date" name="date" type="date"></div>
+          </div>
+
+          <div class="subsection-heading"><div><span class="section-kicker">SUBJECTS AND MARKS</span><h3>Subject scores</h3></div><span class="marks-hint">Enter each subject's total and obtained marks</span></div>
+          <div class="marks-grid">
+            <div class="subject-mark-field"><label for="english-total">English</label><div class="subject-mark-inputs"><input id="english-total" name="englishTotal" type="number" min="0" step="0.5" placeholder="Total" aria-label="English total marks"><input name="englishObtained" type="number" min="0" step="0.5" placeholder="Obtained" aria-label="English obtained marks"></div></div>
+            <div class="subject-mark-field"><label for="urdu-total">Urdu</label><div class="subject-mark-inputs"><input id="urdu-total" name="urduTotal" type="number" min="0" step="0.5" placeholder="Total" aria-label="Urdu total marks"><input name="urduObtained" type="number" min="0" step="0.5" placeholder="Obtained" aria-label="Urdu obtained marks"></div></div>
+            <div class="subject-mark-field"><label for="subjectThree-total">Biology / Mathematics / Psychology</label><div class="subject-mark-inputs"><input id="subjectThree-total" name="subjectThreeTotal" type="number" min="0" step="0.5" placeholder="Total" aria-label="Biology / Mathematics / Psychology total marks"><input name="subjectThreeObtained" type="number" min="0" step="0.5" placeholder="Obtained" aria-label="Biology / Mathematics / Psychology obtained marks"></div></div>
+            <div class="subject-mark-field"><label for="subjectFour-total">Computer / Chemistry / Statistics</label><div class="subject-mark-inputs"><input id="subjectFour-total" name="subjectFourTotal" type="number" min="0" step="0.5" placeholder="Total" aria-label="Computer / Chemistry / Statistics total marks"><input name="subjectFourObtained" type="number" min="0" step="0.5" placeholder="Obtained" aria-label="Computer / Chemistry / Statistics obtained marks"></div></div>
+            <div class="subject-mark-field"><label for="subjectFive-total">Physics / Civics</label><div class="subject-mark-inputs"><input id="subjectFive-total" name="subjectFiveTotal" type="number" min="0" step="0.5" placeholder="Total" aria-label="Physics / Civics total marks"><input name="subjectFiveObtained" type="number" min="0" step="0.5" placeholder="Obtained" aria-label="Physics / Civics obtained marks"></div></div>
+            <div class="subject-mark-field"><label for="quran-total">T.Q. (Tarjuma-tul-Quran)</label><div class="subject-mark-inputs"><input id="quran-total" name="quranTotal" type="number" min="0" step="0.5" placeholder="Total" aria-label="T.Q. total marks"><input name="quranObtained" type="number" min="0" step="0.5" placeholder="Obtained" aria-label="T.Q. obtained marks"></div></div>
+            <div class="subject-mark-field"><label for="islamiat-total">Islamiat</label><div class="subject-mark-inputs"><input id="islamiat-total" name="islamiatTotal" type="number" min="0" step="0.5" placeholder="Total" aria-label="Islamiat total marks"><input name="islamiatObtained" type="number" min="0" step="0.5" placeholder="Obtained" aria-label="Islamiat obtained marks"></div></div>
+          </div>
+          <p class="marks-hint marks-note">Leave both fields blank for subjects that do not apply. No subject marks are pre-filled.</p>
+
+          <div class="subsection-heading summary-heading"><div><span class="section-kicker">RESULT SUMMARY</span><h3>Marks and outcome</h3></div></div>
+          <div class="summary-grid">
+            <div class="field"><label for="remarks">Remarks</label><input id="remarks" name="remarks" type="text" maxlength="240" placeholder="Optional teacher remarks"></div>
+            <div class="field"><label for="total-marks">Total Marks</label><input id="total-marks" name="totalMarks" type="number" min="0" step="0.5" placeholder="Enter total"></div>
+            <div class="field"><label for="obtained-marks">Obtained Marks</label><input id="obtained-marks" name="obtainedMarks" type="number" min="0" step="0.5" placeholder="Enter obtained"></div>
+            <div class="summary-stat"><span>Percentage</span><strong id="percentage">—</strong></div>
+            <div class="summary-stat"><span>Result Status</span><strong id="result-status" class="status-pill status-pending">Pending</strong></div>
+          </div>
+          <div class="criteria-row">
+            <label class="criteria-note" for="pass-percentage">Pass if score is at least</label>
+            <input id="pass-percentage" type="number" min="0" max="100" step="1" value="33" aria-label="Passing percentage">
+            <span class="criteria-note">% in every entered subject and overall.</span>
+            <span class="criteria-message" id="criteria-message" role="status" aria-live="polite"></span>
+          </div>
+          <p class="form-message" id="save-message" role="status" aria-live="polite"></p>
+          <div class="form-actions">
+            <button class="button button-primary" id="save-button" type="submit">Save Result <span aria-hidden="true">→</span></button>
+            <button class="button button-secondary" id="update-button" type="button" hidden>Update Result <span aria-hidden="true">↻</span></button>
+            <button class="button button-outline" id="clear-button" type="reset">Clear Form</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="records-column">
+        <section class="records-card card">
+          <div class="section-heading records-heading"><div><span class="section-kicker">RECORDS</span><h2>Saved results</h2></div></div>
+          <label class="sr-only" for="records-search">Search saved results</label>
+          <div class="records-search"><span aria-hidden="true">⌕</span><input id="records-search" type="search" placeholder="Search name or roll number"></div>
+          <div id="records-list" class="records-list"></div>
+          <p class="records-empty" id="records-empty">No saved results yet. Add a student record to get started.</p>
+        </section>
+        <div class="storage-note"><span aria-hidden="true">⌑</span><p><strong>Shared results database</strong><br>Saved results are available from the public website on any device.</p></div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span>© <span data-current-year></span> Punjab NastonAL College · Peshawar Chapter</span>
+    <span>Administrator Data Entry Panel</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

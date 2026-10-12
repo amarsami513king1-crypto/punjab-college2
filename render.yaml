@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: punjab-college-results
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: punjab-college-results-db
+          property: connectionString
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+databases:
+  - name: punjab-college-results-db
+    databaseName: college_results
+    user: college_results_admin
+    plan: basic-256mb
